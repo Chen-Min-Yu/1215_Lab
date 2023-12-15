@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Design</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:white;
+      text-align: center;
+      margin: 50px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background-color: #555; 
+      transform: scale(1.1);
+    }
+    #button1 {
+      background-color:lightgoldenrodyellow ;
+      color: black;
+    }
+    #button2 {
+      background-color: pink;
+      color: black;
+    }
+    #button3 {
+      background-color: olivedrab;
+      color: black;
+    }
+    #button4 {
+      background-color: lightcyan;
+      color: black;
+    }
+    #resetButton {
+      background-color: grey;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>12/15 Lab</h1>
+  
+  <button id="button1" onclick= "showPopup('The first number is ' + num1)">Button 1</button>
+  <button id="button2"onclick= "showPopup('The second number is ' + num2)">Button 2</button>
+  <button id="button3" onclick="changeBackgroundColor('lightslategray');">Button 3</button>
+  <button id="button4" onclick="changeBackgroundColor('lightgrey');">Button 4</button>
+  <button id="resetButton" onclick="changeBackgroundColor('white');">Reset</button>
+
+  <script>
+    function showPopup(message) {
+      alert(message);
+    }
+
+    function changeBackgroundColor(color) {
+      document.body.style.backgroundColor = color;
+    }
+
+
+      var num1 = parseInt(window.prompt('Enter the first input:'));
+      var num2 = parseInt(window.prompt('Enter the second input:'));
+
+      if (num1 > num2) {
+        changeBackgroundColor('lightblue');
+        document.writeln("<br>"+num1 + ">" + num2 + "</br>");
+      } else if (num1 < num2) {
+        changeBackgroundColor('orange');
+        document.writeln("<br>"+num1 + "<" + num2 + "</br>");
+      } else {
+        changeBackgroundColor('lightyellow');
+        document.writeln("<br>"+num1 + "==" + num2 + "</br>");
+      }  
+  </script>
+
+
+</body>
+</html>
